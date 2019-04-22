@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel='stylesheet' href='primary_styles.css'></link>
+    </head>
+    <body>
+        <div id='question_area_input'>
+            Select Correct Answer By Hitting Radio button beside it.<br />
+            <form id='input_data'>
+                Question:<input type='text' name='q'/><br />
+                <input id='choice0' type='radio' name='correct_choice' value='0'><label for='choice0'><span><span></span></span></label>
+                Answer 1:<input type='text' name='a_0'/><br />
+                <input id='choice0' type='radio' name='correct_choice' value='0'><label for='choice1'><span><span></span></span></label>
+                Answer 2:<input type='text' name='a_1'/><br />
+                <input id='choice0' type='radio' name='correct_choice' value='0'><label for='choice2'><span><span></span></span></label>
+                Answer 3:<input type='text' name='a_2'/><br />
+                <input id='choice0' type='radio' name='correct_choice' value='0'><label for='choice3'><span><span></span></span></label>
+                Answer 4:<input type='text' name='a_3'/>
+            </form>
+            <button id='submit_question' onclick='encode_question(input_data);'>Submit Question</button>
+        </div>
+        <script type='text/javascript' src='question_encoder.js'></script>
+        <script type='text/javascript' src='misc.js'></script>
+        <script type='text/javascript' src='msgpack.js'></script>
+        
+    </body>
+</html>
