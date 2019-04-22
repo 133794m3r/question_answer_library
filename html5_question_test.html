@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5//EN"
+    "http://www.w3.org/TR/html5/html5.dtd"
+    >
+<html lang="en">
+<head>
+    <title>HTML5 Practice Question Test</title>
+     <link rel="stylesheet" type='text/css' href='primary_styles.css' />
+</head>
+<body>
+    <div id='question_area'>
+        <span id='question'>Example Question</span>
+        <br />
+        <form id='answers'>
+            <div>
+            <input id='choice1' type='radio' name='choices' value='1'>
+                <label for='choice1'><span><span></span></span><span class='choices'> Option 1</span></label>
+            </div>
+            <div>
+            <input id='choice2' type='radio' name='choices' value='2'>
+                <label for='choice2'><span><span></span></span><span class='choices'> Option 2</span></label>
+            </div>
+            <div>
+            <input id='choice2' type='radio' name='choices' value='3'>
+                <label for='choice2'><span><span></span></span><span class='choices'> Option 3</span></label>
+            </div>
+        </form>
+        <button onclick="check_answer(answers.choices.value)">Check Answer</button>
+        <input type='text'  id='correct_answer_test' value='1'/>
+    </div>
+    <div id='running_tally'>
+        <span id='tally number'></span>
+    </div>
+    <script type='text/javascript' src='answer_checker.js'></script>
+    <script type='text/javascript' src='misc.js'></script>
+    <!--
+
+ HTML5 Practice Question System
+ Copyright (c) 133794m3r aka Macarthur Inbody 2019-2019
+ https://github.com/133794m3r/html5test
+ Licensed GNU AGPLv3 or Later
+ version 0.0.1
+-->
+</body>
+</html>
