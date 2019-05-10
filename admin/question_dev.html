@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.01 Transitional//EN" "http://www.w3.org/TR/html5/loose.dtd">
+<html>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<head>
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <link href="dev.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="devtoc">
+			<select id='filter_categories' onChange='filter_category();'>
+				<option value='M'>Select Subject Matter</option>
+				<option value='0'>Anatomy & Physiology</option>
+				<option value='1'>Biology</option>
+				<option value='2'>Microbiology</option>
+				<option value='3'>Organic Chemistry</option>
+				<option value='4'>Chemistry</option>
+				<option value='5'>Algebra</option>
+			</select>
+			<select id='filter_chapters' onChange='filter_chapters();'>
+				<option value='C'>Select Chapter</option>
+			</select>
+			<p> List of Questions</p>
+
+			<form method='get' autcomplete='off'>
+				<input type='text' value='' name='query' id='question_query' onKeyUp='filter_items_list();' />
+				<ul id='questions_data'>
+					<li>
+						<span>asdf</span>
+					</li>
+					<li>
+						<span>bsdf</span>
+					</li>
+				</ul>
+			</form>
+		</div>
+		<div id='devhelp'>
+		asdf
+		</div>
+		<div id='devmain'>
+		<center>
+			<h1>
+				Question & Answer Development System
+			</h1>
+		</center>
+		<p>
+			Below you'll find the system to make the questions for the subject along with the option to include rationales for said questions.
+		</p>
+		<form name='question_to_encode'>
+			<select id='question_categories'>
+				<option value='M'>Select Subject Matter</option>
+				<option value='0'>Anatomy & Physiology</option>
+				<option value='1'>Biology</option>
+				<option value='2'>Microbiology</option>
+				<option value='3'>Organic Chemistry</option>
+				<option value='4'>Chemistry</option>
+				<option value='5'>Algebra</option>
+				<option value='-1'>Add new category</option>
+			</select>
+			<input id='new_category' class='hidden' name='new_category' />
+			<select id='question_chapters'>
+				<option value='C'>Select Chapter</option>
+				<option value='-1'>Add new chapter</option>
+			</select>
+			<input id='new_chapter' class='hidden' name='new_chapter' />
+			<button type='button' onclick='process_form_data();'> Submit Question </button>
+		</form>
+		</div>
+		<script>
+			function process_form_data(){
+				console.log('a');
+			}
+			document.getElementById('filter_categories').setAttribute('onChange','filter_category()');
+			document.getElementById('filter_chapters').setAttribute('onChange','filter_chapters()');
+			document.getElementById('question_categories').setAttribute('onChange','question_category()');
+			document.getElementById('question_chapters').setAttribute('onChange','question_chapter()');
+		</script>
+		<script src='question_dev.js'></script>
+		<script src='../scripts/quicksilver.js'></script>
+		<!--
+
+HTML5 Practice Question System
+Copyright (c) 133794m3r aka Macarthur Inbody 2019-2019
+https://github.com/133794m3r/html5test
+Licensed GNU AGPLv3 or Later
+version 0.0.1
+		-->
+	   </body>
+</html>
