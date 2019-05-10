@@ -14,9 +14,11 @@ font-size:200%;
 #correct_answer_test{
   visibility: hidden;
 }
-
+.hidden{
+  visibility: hidden;
+}
 button{
-  martin-top:1em;s
+  margin-top:1em;
   font-size:1em;
 }
 
@@ -43,7 +45,7 @@ input[type=radio   ]:not(old) + label > span:not(.choices){
   margin           : 0.25em 0.5em 0.25em 0.25em;
   border           : 0.0625em solid #c0c0c0;
   border-radius    : 0.25em;
-  background       : #e0e0e0
+  background       : #e0e0e0;
   background-image :    -moz-linear-gradient(#f0f0f0,#e0e0e0);
   background-image :     -ms-linear-gradient(#f0f0f0,#e0e0e0);
   background-image :      -o-linear-gradient(#f0f0f0,#e0e0e0);
