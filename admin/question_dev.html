@@ -34,7 +34,18 @@
 			</form>
 		</div>
 		<div id='devhelp'>
-		asdf
+		<span> Help for question creation </span>
+        <ul>
+            <li>
+                <span class='show'>Basic Information</span>
+                <p>
+                    This utility will help you create the questions that will then appear on the client-side website. Also you
+                    must do is make sure that you include at least 2 possible answers for the question if it's true/false.
+                    Otherwise the minimum amount of answers you should stick with is 3 if at all possible. You start by first
+                    selecting the material's category. Then you select what chapter your questions are to be coming from.
+                </p>
+            </li>
+        </ul>
 		</div>
 		<div id='devmain'>
 		<center>
@@ -61,8 +72,21 @@
 				<option value='C'>Select Chapter</option>
 				<option value='-1'>Add new chapter</option>
 			</select>
-			<input id='new_chapter' class='hidden' name='new_chapter' />
-			<button type='button' onclick='process_form_data();'> Submit Question </button>
+			<input id='new_chapter' class='hidden' name='new_chapter' /><br />
+            Question:<textarea id='question_txt' name='question_txt'></textarea>
+            <input id='question_id' name='question_id' class='hidden'/> <br />
+            <h3>Answers:</h3>
+            1:<textarea id="answer_0" cols="30" rows="2" name='answer_0_txt'>
+            </textarea>
+            2:<textarea id="answer_1" cols="30" rows="2" name='answer_1_txt'>   
+            </textarea>
+            3:<textarea id="answer_2" cols="30" rows="2" name='answer_2_txt'>
+            </textarea><br />
+            4:<textarea id="answer_3" cols="30" rows="2" name='answer_3_txt'>
+            </textarea>
+            <input id='answer_0_id' name='answer_0_id' class='hidden'/>
+            <input id='answer_1_id' name='answer_1_id' class='hidden'/>
+			<br /><button type='button' onclick='process_form_data();'>Submit Question </button>
 		</form>
 		</div>
 		<script>
