@@ -100,3 +100,6 @@ table{
     height:auto;
     top:7px;
 }
+.hidden{
+    display:none;
+}
