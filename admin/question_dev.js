@@ -5,11 +5,17 @@
 * Licensed GNU AGPLv3 or Later
 * version 0.0.1
 */
+/**
+ * Filter Items List
+ *
+ * Filters inputs from the query string.
+ * @param none
+ * @return none
+ *
+ */
 
-
-function filter_items_list(query_input_id,items_search_string) {
+function filter_items_list() {
     var input='';
-    var li='';
     var i=0;
     var all_items_length=0;
     var txt='';
@@ -29,4 +35,8 @@ function filter_items_list(query_input_id,items_search_string) {
     }
   }
   return 0;
+}
+
+function filter_category() {
+    //code
 }
