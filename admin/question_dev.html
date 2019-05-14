@@ -47,18 +47,31 @@
                 </p>
             </li>
             <li>
-                <span class='show'>Creation of Questions Pt. 1:Writing the Question & Answers</span>
+                <span class='show'>Creation of Questions Pt. 0<br />Some tips for writing your questions.</span>
+                <p class="hidden">
+                    When writing your questions be sure that they are clearly word. You can use trick questions as in referring
+                    to something in both possible ways but you should explain what you're asking. For example, an Anatomy
+                    question could be worded as follows. "Lying anteriorly to the dorsal gray horns, and also posteriorly to the
+                    ventral gray horns is the ___ horns." The answer here would be the lateral gray horns as they are between
+                    the two horns. And Anterior is a synonym for Ventral which both mean "towards the front", and Dorsal/Posterior mean
+                    towards the back/behind. Also make sure that the answers are similarly correct. If you try to confuse the
+                    student utilizing tricks like these you may end up tricking yourself or at least I did.
+                </p>
+            </li>
+            <li>
+                <span class='show'>Creation of Questions Pt. 1<br />Writing the Question & Answers</span>
                 <p class="hidden">
                     When you start creating a question. You first have to select the material's subject-matter. Then you have
                     to select what chapter questions are concerning. If you do not already see the chapter listed, you have to
                     click the "add chapter" button to add it to the list of possible chapters for the materials. After that you
                     have to write the question. Next you write the answers, make sure you do at least 3 answers if you're not
                     doing a true/false question as by default if you only list two answers it'll make it be a true/false question.
-                    
+                    You also need to make sure to click the "checkbox" beside the answers you've written to mark that one as the
+                    correct one.
                 </p>
             </li>
             <li>
-                <span class='show'>Creation of Questions Pt. 2:Adding Answers</span>
+                <span class='show'>Creation of Questions Pt. 2<br />Adding Answers</span>
                 <p class="hidden">
                     You can also add more answers besides the default 3 by clicking the "+" beside the answers text-box on the
                     page. You can add additional answers up until a total of 5 as the 6th answer will always be a "I Don't Know"
@@ -67,7 +80,17 @@
                 </p>
             </li>
             <li>
-                <span class='show'>Creation of Questions Pt. 3</span>
+                <span class='show'>Creation of Questions Pt. 3<br />Rationales</span>
+                <p class="hidden">
+                    Rationales are linked to each of the questions and can be added by clicking on the button that says "add
+                    rationales." These explain why each answer is either right or wrong. You should add at least one rationale
+                    for the correct answer explaining why it is the correct answer. If you're doing multiple answers it's best
+                    to make it so that you have an answer explaining why each one is right or wrong. The rationales also link
+                    back to the answers themselves. E.g. Answer 1 -> Rationale 1, Ans 2->Rationale 2... etc. They are linked
+                    of course. And the one that's correct would link to the correct one. Before the rationales the text
+                    whether it is wrong or not is automatically prepended. E.g {Answer_Number} is incorrect because
+                    {Rational_Text}.
+                </p>
             </li>
         </ul>
 		</div>
@@ -81,7 +104,7 @@
 			Below you'll find the system to make the questions for the subject along with the option to include rationales
             for said questions.
 		</p>
-		<form name='question_to_encode'>
+		<form name='question_to_encode' id='question_to_encode'>
 			<select id='question_categories'>
 				<option value='M'>Select Subject Matter</option>
 				<option value='0'>Anatomy & Physiology</option>
@@ -98,20 +121,27 @@
 				<option value='-1'>Add new chapter</option>
 			</select>
 			<input id='new_chapter' class='hidden' name='new_chapter' /><br />
-            Question:<textarea id='question_txt' name='question_txt'></textarea>
+            Question:<textarea id='question_txt' name='question_txt' cols='40' rows='1'></textarea>
             <input id='question_id' name='question_id' class='hidden'/> <br />
             <h3>Answers:</h3>
-            1:<textarea id="answer_0" cols="30" rows="2" name='answer_0_txt'>
-            </textarea>
-            2:<textarea id="answer_1" cols="30" rows="2" name='answer_1_txt'>   
-            </textarea>
-            3:<textarea id="answer_2" cols="30" rows="2" name='answer_2_txt'>
-            </textarea><br />
-            4:<textarea id="answer_3" cols="30" rows="2" name='answer_3_txt'>
-            </textarea>
+<!--            <div id='answers_and_rationales'>
+-->            <span class='numerical_labels'>1:</span>
+            <textarea id="answer_0" cols="30" rows="3" name='answer_0_txt'></textarea>&emsp;&emsp;
+            <span class='numerical_labels'>2:</span>
+            <textarea id="answer_1" cols="30" rows="3" name='answer_1_txt'></textarea>&emsp;&emsp;
+            <span class='add'>Add Answer</span>
+            <br />
+            <span class='numerical_labels'>3:</span>
+            <textarea id="answer_2" cols="30" rows="3" name='answer_2_txt'></textarea>&emsp;&emsp;
+            <span class='numerical_labels'>4:</span>
+            <textarea id="answer_3" cols="30" rows="3" name='answer_3_txt'></textarea>&emsp;&emsp;
+            <span class='remove'>Remove Answer</span>
+            <br />
+            <span id='add_rational' class='add'>Add Rational</span>
             <input id='answer_0_id' name='answer_0_id' class='hidden'/>
             <input id='answer_1_id' name='answer_1_id' class='hidden'/>
-			<br /><button type='button' onclick='process_form_data();'>Submit Question </button>
+<!--            </div>
+-->			<br /><br /><button type='button' onclick='process_form_data();'>Submit Question </button>
 		</form>
 		</div>
 		<script>

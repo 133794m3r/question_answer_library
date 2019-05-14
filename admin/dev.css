@@ -16,19 +16,22 @@ top: 4px;
 left:0px;
 width:15%;
 height:98%;
-padding:5px;
-
-overflow:auto;
+padding:3px;
 }
+#devtoc select{
+    font-size:1em;
+}
+/*
 #devtoc input{
     width:98%;
 }
+*/
 #devhelp{
 position:absolute;
 position:fixed;
 top:4px;
 right:2px;
-width:21%;
+width:20%;
 height:98%;
 padding:5px;
 overflow:auto;
@@ -37,7 +40,7 @@ overflow:auto;
 position:absolute;
 left: 16%;
 top: 4px;
-width: 61%;
+width: 60%;
 }
 ul{
     list-style:none;
@@ -102,4 +105,33 @@ table{
 }
 .hidden{
     display:none;
+}
+#answers_and_rationales{
+    margin-bottom: 0px;
+    border: 0px;    
+    display: inline-block;    
+}
+.numerical_labels{
+    font-size:2.0em;
+    margin-bottom: 0px;
+    border: 0px;
+    max-width: 1em;
+    display: inline-block;
+    vertical-align: 0.5em;
+}
+.add{
+    font-size:1.5em;
+    display:inline-block;
+    vertical-align:75%;
+}
+.remove{
+    font-size:1.5em;
+    display:inline-block;
+    vertical-align:75%;
+}
+#spacing{
+    border-bottom:1em;
+}
+#add_rational{
+    vertical-align:bottom;
 }
