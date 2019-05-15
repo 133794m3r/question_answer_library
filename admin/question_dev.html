@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div id="devtoc">
-			<select id='filter_categories' onChange='filter_category();'>
+			<select id='filter_subjects' onChange='filter_subjects();'>
 				<option value='M'>Select Subject Matter</option>
 				<option value='0'>Anatomy & Physiology</option>
 				<option value='1'>Biology</option>
@@ -22,12 +22,12 @@
 			<p> List of Questions</p>
 
 			<form method='get' autcomplete='off'>
-				<input type='text' value='' name='query' id='question_query' onKeyUp='filter_items_list();' />
-				<ul id='questions_data'>
-					<li>
+				<input type='text' value='' name='query' id='question_query' onKeyUp='filter_items_list("question_query",".questions_data");' />
+				<ul>
+					<li class='questions_data'>
 						<span>asdf</span>
 					</li>
-					<li>
+					<li class='questions_data'>
 						<span>bsdf</span>
 					</li>
 				</ul>
@@ -105,7 +105,7 @@
             for said questions.
 		</p>
 		<form name='question_to_encode' id='question_to_encode'>
-			<select id='question_categories'>
+			<select id='question_subjects'>
 				<option value='M'>Select Subject Matter</option>
 				<option value='0'>Anatomy & Physiology</option>
 				<option value='1'>Biology</option>
@@ -113,9 +113,9 @@
 				<option value='3'>Organic Chemistry</option>
 				<option value='4'>Chemistry</option>
 				<option value='5'>Algebra</option>
-				<option value='-1'>Add new category</option>
+				<option value='-1'>Add new subject</option>
 			</select>
-			<input id='new_category' class='hidden' name='new_category' />
+			<input id='new_subject' class='hidden' name='new_subject' />
 			<select id='question_chapters'>
 				<option value='C'>Select Chapter</option>
 				<option value='-1'>Add new chapter</option>
@@ -148,13 +148,13 @@
 			function process_form_data(){
 				console.log('a');
 			}
-			document.getElementById('filter_categories').setAttribute('onChange','filter_category()');
+			document.getElementById('filter_categories').setAttribute('onChange','filter_subject()');
 			document.getElementById('filter_chapters').setAttribute('onChange','filter_chapters()');
-			document.getElementById('question_categories').setAttribute('onChange','question_category()');
+			document.getElementById('question_categories').setAttribute('onChange','question_subject()');
 			document.getElementById('question_chapters').setAttribute('onChange','question_chapter()');
 		</script>
-		<script src='question_dev.js'></script>
-		<script src='../scripts/quicksilver.js'></script>
+		<script async defer src='question_dev.js'></script>
+		<script async src='../scripts/quicksilver_new.js'></script>
 		<!--
 
 HTML5 Practice Question System
