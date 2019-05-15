@@ -14,20 +14,20 @@
  *
  */
 
-function filter_items_list() {
+function filter_items_list(query_id,data_id) {
     var input='';
     var i=0;
     var all_items_length=0;
     var txt='';
-    var score=0;
-    input = document.getElementById('question_query').value.toUpperCase();
-    //filter = input.value.toUpperCase();
-    all_items= document.querySelectorAll('#questions_data span');
+    var relevancy=0;
+    input = document.getElementById(query_id).value.toUpperCase();
+    all_items= document.querySelectorAll(data_id);
     all_items_length=all_items.length;
+
   for (i = 0; i < all_items_length; i++) {
     txt = all_items[i].innerText.toUpperCase();
-    score=txt.score(input);
-    if(score > 0){
+    relevancy=score(txt,input);
+    if(relevancy > 0){
       all_items[i].style.display = "";
     }
     else {
@@ -39,4 +39,17 @@ function filter_items_list() {
 
 function filter_category() {
     //code
+    return 0;
+}
+function filter_chapters() {
+    //code
+    return 0;
+}
+function change_category() {
+    //code
+    return 0;
+}
+function question_chapter() {
+    //code
+    return 0;
 }
