@@ -148,12 +148,13 @@
 			function process_form_data(){
 				console.log('a');
 			}
-			document.getElementById('filter_categories').setAttribute('onChange','filter_subject()');
+			document.getElementById('filter_subjects').setAttribute('onChange','filter_subject()');
 			document.getElementById('filter_chapters').setAttribute('onChange','filter_chapters()');
-			document.getElementById('question_categories').setAttribute('onChange','question_subject()');
+			document.getElementById('question_subjects').setAttribute('onChange','question_subject()');
 			document.getElementById('question_chapters').setAttribute('onChange','question_chapter()');
 		</script>
 		<script async defer src='question_dev.js'></script>
+        <script type="application/x-javascript" src='../scripts/msgpack.js'></script>
 		<script async src='../scripts/quicksilver_new.js'></script>
 		<!--
 
