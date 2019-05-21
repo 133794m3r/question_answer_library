@@ -9,33 +9,33 @@
         <div id='devmain'>
         <h1>List of Categories, Chapters, Units & Classes</h1>
         <select id='data_type_to_modify'>
-             <option value='M'>Select Ct/Ch/Un</option>
-             <option value='0'>Material Category</option>
+             <option value='-1'>Select Ct/Ch/Un</option>
+             <option value='0'>Material Subject</option>
              <option value='1'>Material Chapter</option>
              <option value='2'>Material Unit</option>
              <option value='3'>Material Class</option>
         </select>
-        <select id='subject_type'>
-            <option value='M'>Select Subject</option>
+        <select id='subject_type' class='hidden'>
+            <option value='-1'>Select Subject</option>
 			<option value='0'>Anatomy & Physiology</option>
 			<option value='1'>Biology</option>
 			<option value='2'>Microbiology</option>
 			<option value='3'>Organic Chemistry</option>
 			<option value='4'>Chemistry</option>
 			<option value='5'>Algebra</option>
-			<option value='-1'>Add New category</option>
+			<option value='-127'>Add New category</option>
         </select>
         <select class='hidden' id='chapter_number'>
-            <option value='M'>Select Chapter Number</option>
-            <option value='-1'>Add New Chapter</option>
+            <option value='-1'>Select Chapter Number</option>
+            <option value='-127'>Add New Chapter</option>
         </select>
         <select class='hidden' id='unit_number'>
-            <option value='M'>Select Unit Number</option>
-            <option value='-1'>Add new Unit</option>
+            <option value='-1'>Select Unit Number</option>
+            <option value='-127'>Add new Unit</option>
         </select>
         <select class='hidden' id='course_id'>
-            <option value='M'>Course Identifier</option>
-            <option value='-1'>Add new Course</option>
+            <option value='-1'>Course Identifier</option>
+            <option value='-127'>Add new Course</option>
         </select>
         <div id='data_inputs_area'>
 
@@ -54,14 +54,16 @@
         <div id='devhelp'>
         </div>
         <script type="application/x-javascript">
-			document.getElementById('data_type_modify').setAttribute('onChange','data_to_modify()');
-			document.getElementById('category_type').setAttribute('onChange','chapter_subject()');
+			document.getElementById('data_type_to_modify').setAttribute('onChange','data_to_modify()');
+			document.getElementById('subject_type').setAttribute('onChange','chapter_subject()');
 			document.getElementById('chapter_number').setAttribute('onChange','change_chapter()');
 			document.getElementById('unit_number').setAttribute('onChange','change_unit()');
             document.getElementById('course_id').setAttribute('onChange','change_course()');
         </script>
-		<script async defer src='unicat_dev.js'></script>
+		<script async defer src='unitcat_dev.js'></script>
 		<script async src='../scripts/quicksilver_new.js'></script>
+        <script type="application/x-javascript" src='../scripts/msgpack.js'></script>
+		<script type="application/x-javascript" async src='../scripts/misc.js'></script>
 		<!--
 
 HTML5 Practice Question System

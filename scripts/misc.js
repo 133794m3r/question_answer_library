@@ -76,3 +76,6 @@ function select_by_id(element_id){
 var element=document.getElementById(element_id);
 return element;
 }
+function select_all(identifier){
+    return document.querySelectorAll(identifier);
+}
