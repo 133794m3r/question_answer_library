@@ -79,3 +79,4 @@ return element;
 function select_all(identifier){
     return document.querySelectorAll(identifier);
 }
+function ajax()

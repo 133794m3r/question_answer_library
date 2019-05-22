@@ -39,6 +39,7 @@
         </select>
         <div id='data_inputs_area'>
 
+			<br /><button onclick='submit_it()'>Submit</button>
         </div>
         </div>        
         <div id='devtoc'>
@@ -55,10 +56,11 @@
         </div>
         <script type="application/x-javascript">
 			document.getElementById('data_type_to_modify').setAttribute('onChange','data_to_modify()');
-			document.getElementById('subject_type').setAttribute('onChange','chapter_subject()');
+			document.getElementById('subject_type').setAttribute('onChange','change_subject()');
 			document.getElementById('chapter_number').setAttribute('onChange','change_chapter()');
 			document.getElementById('unit_number').setAttribute('onChange','change_unit()');
             document.getElementById('course_id').setAttribute('onChange','change_course()');
+			
         </script>
 		<script async defer src='unitcat_dev.js'></script>
 		<script async src='../scripts/quicksilver_new.js'></script>
