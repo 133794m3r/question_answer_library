@@ -79,4 +79,15 @@ return element;
 function select_all(identifier){
     return document.querySelectorAll(identifier);
 }
-function ajax()
+function ajax(location,method_type,data){
+    var ajax=new XMLHttpRequest();
+    ajax.open('GET','/dev_broker?crsf=new');
+    ajax.setRequestHeader('X-Requested-With : XMLHttpRequest');
+    ajax.send();
+    ajax.open(method_type,location,false);
+    ajax.setRequestHeader('X-Requested-With : XMLHttpRequest');
+    ajax.send(data);
+    var response=ajax.response;
+    return response;
+
+}
