@@ -13,7 +13,7 @@ function db_add_objects(dbname,objname,data,data_len){
     var tx = db.transaction(objname, 'readwrite');
     {
     for(i=0;i<data_len;i++){
-       await status=tx.store.add(objname,data[i]);
+       await status=tx.store.add(objname,data);
     }
     await tx.done;
     }
