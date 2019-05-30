@@ -1,0 +1,31 @@
+Current Roadmap
+MVP=0.5
+v0.5 *Features:* 
+    Questions can be answered and are selected randomly from a list that is entirely stored locally inside of a gigantic json file and hosted on github. 
+    Questions on clientside are stored in json files. All related data from other tables on the server is added    
+    The ability to encode questions/modify them for the server will also be included and they will be done in the current time but the server won't be public.
+    Also the resulting data will not be dynamic and it will instead be stored in json files that are then included inside of the repo itself. No authentication as it's just a static site.
+    Users will be told when an answer is wrong that they have tried. At the end it'll give them a {0-100}% correct score.
+    Only A&P 1/2 are on offer. User will have to select questions based upon chapter only.
+v1.0 *Features*
+    An actual login system just authenication via a code. Site will be online via a VPS. Data will be cached via IndexedDB instead of just storing as json files.
+    Users will be given a selection of questions to answers and the objstore will be made from rows from a virtual table with all data included.
+    The ability to add new questions/modify old ones and invalidate the cache will also be possible with this version. CRSF tokens will be utilized. And captcha-like system will be just a PoW system+answering a simple math questions.
+    Users will be shown the actual questions that they missed with the question text shown and given the option to retry those questions again with their new batch of questions.
+    Users will be able to select questions by their unit after selecting the Subject Matter(A&P 1/A&P 2).
+    Users will be able to print out question sheets includeding a seperate section with the answer key & any rationales. This way they can take it on the go even if they're offline.
+    
+V1.5 *Features*
+    Users will be given a short string at the end of their session that contains the IDs of questions that they missed so that those are included during the next batch of random questions. It will be given as a string of ASCII85 characters with a small checksum charater at the end. The length of which is undetermined. They will receive a code for each chapter. This data will be stored within their session store but this is so that they can transfer their progress from device to device.
+    Further sessions wil be carried over so that progress isn't instantly lost as long as the cahce is not wiped. Data that needs to be updated will be done via the invalidation method with modified entries modifying old rows in the objstore. 
+V2.0 *Features*
+    The cache will be compressed via LZW+Huffman thus saving a ton of space.
+    Users will be given the ability to create logins and have their progress tracked from session to session so they can keep trying at ones that they missed without the need to remember the code.
+    There will be an analytics page showing what % of questions that they got wrong from each chapter will be shown to the students.
+    Teachers will be able to see all students(anyone who utilizes their access code to sign up) and see how well the students are doing with any given chapter.
+    Site will hopefully work as an offline application with connectivity checks so that it can run completely offline with the caveat that the analytics will only be utilized for themselves and won't be put into the class total. This will be for wrong questions, not their ranking.
+V3.0 *Features*
+    Users will be given a series of questions and have missed questions come back at the end of the current set of questions(1/2 the total questions given) and mixed in so that they can learn them better. Further they will be able to select how many questions that they want to try for. Also they will be able to select an option of "I don't know" to have the question marked as "skipped" so that it can be tried again later. They will be able to do this 1 time before having to give some answer if it is selected twice it is marked wrong.
+    Further analytics showing how well they're doing relative to their peers in terms of % of questions answered correctly. Teachers will get an overview of the averages for all of their students for each chapter, unit and even question if they wish.
+    The major new analytical point will be that teachers will be able to see the {TBD}% most missed questions of any given unit. Wherein they'll see the top questions that students are missing so that they can get better review materials for their students.
+ 
