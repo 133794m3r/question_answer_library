@@ -63,3 +63,8 @@ function submit_it(){
         return 1;
     }
 }
+function get_all_data(){
+    var location='localhost/dev_broker.php?data=true&tables=courses,chapters,units,subjects';
+    var returned_data = ajax(location,'GET','');
+
+}
