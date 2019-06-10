@@ -1,15 +1,14 @@
 <?PHP
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
     if (ob_get_contents()) ob_clean(); // ob_get_contents() even works without active output buffering
+	echo 'blahblah';
     header('Location: /');
 	session_write_close();
     fastcgi_finish_request();
 }
 include '../main/functions.php';
+include '../main/config.php';
 
-if(!isset($_SESSION)){
-	session_start();
-}
 function crsf_tokens($username){
 	 return unique_token($username);
 }
@@ -20,7 +19,7 @@ if(isset($_GET)){
 			$username=$_SESSION['username'];
 		}
 		else{
-			$username='initial_crsft_user';
+			$username='initial_crsf_user';
 		}
 		$_SESSION['crsf']=crsf_tokens($username);
 		echo $_SESSION['crsf'];

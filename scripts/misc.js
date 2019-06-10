@@ -134,3 +134,37 @@ function int_to_bits(ints){
     var bits=bin.length;
     return bits;
 }
+function work_func_fast(password,salt,iterations,output_len){
+"use strict";
+    password = sha256_fast(password);
+    salt = sha256_fast(salt);
+    password=sha256(bcrypt_one_iter(password,salt.slice(0,16)));
+    var password_len = 32;
+    var salt_len = 32;
+    var i = 0; 
+    var inner_len = 100;
+    var inner = new Uint8Array(inner_len);
+    var outer_key =  new Uint8Array(64);
+    var output_string = new Uint8Array(output_len);
+    var tmp_arr = new Uint8Array(96);
+    var tmp = new Uint8Array(32);
+    var j = 0;
+    var i_4 = inner_len-4;
+    inner.fill(0x36);
+    for(i=0; i< 32; i++){
+        inner[i] = inner[i] ^ password[i];
+    }
+    inner.set(salt,64);
+    inner.fill(0,i_4);
+    outer_key.fill(0x5c);
+    for(i=0; i < 32; i++){
+        outer_key[i] = outer_key[i] ^ password[i];
+    }
+    while(output_len >= 32){
+        for(i=inner_len-1; i >=i_4; i--){
+            inner[i]++;
+            if(inner[i]
+            }
+    }
+    
+}

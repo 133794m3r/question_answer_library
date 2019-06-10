@@ -53,3 +53,10 @@ function question_chapter() {
     //code
     return 0;
 }
+function get_all_data(){
+    var url='/devbroker.php?data=true&tables=';
+    var all_data=new Array();
+    var tables='answers,chapters,courses,questions,rationales,subjects,units';
+    url=url+tables;
+    all_data=ajax(url,'GET',null);
+}
