@@ -1,7 +1,6 @@
 <?PHP
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
     if (ob_get_contents()) ob_clean(); // ob_get_contents() even works without active output buffering
-	echo 'blahblah';
     header('Location: /');
 	session_write_close();
     fastcgi_finish_request();
