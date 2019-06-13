@@ -54,9 +54,9 @@ function question_chapter() {
     return 0;
 }
 function get_all_data(){
-    var url='/devbroker.php?data=true&tables=';
+    var url='dev_broker.php'
     var all_data=new Array();
-    var tables='answers,chapters,courses,questions,rationales,subjects,units';
-    url=url+tables;
-    all_data=ajax(url,'GET',null);
+    var tables='data=true&tables=answers,chapters,courses,questions,rationales,subjects,units';
+    all_data=ajax(url,'POST',tables);
+    console.log(all_data);
 }

@@ -17,6 +17,11 @@ function unique_token($vars){
 	$token=base64_encode(hash('sha256',$r.$vars,raw));
 	return $token;
 }
+
+function crsf_tokens($username){
+	 return unique_token($username);
+}
+
 /**
  * Get All data from the database.
  * This function will get all of the data from a table so that it can nthen be returned
@@ -28,21 +33,20 @@ function unique_token($vars){
  * @return {Array}	The data returned is an array representing all of the rows.
  */
 function get_all_data($db_name,$tables_to_get){
+    global $db_host,$db_user,$db_pass;
 	$tables_split=explode(',',$tables_to_get);
 	$total_tables=count($tables_split);
-	$conn=mysqli_connect($db_host,$db_user,$db_pass)
-		or  fastcgi_finish_request();
+	$conn=mysqli_connect($db_host,$db_user,$db_pass);
 	mysqli_select_db($conn,$db_name);
 	mysqli_options($conn,MYSQLI_OPT_INT_AND_FLOAT_NATIVE,TRUE);
 	$tables_results=array();
 	for($i=0;$i<$total_tables;++$i){
-		$query=sprintf('SELECT * FROM %s','');
+		$query=sprintf('SELECT * FROM %s',$tables_split[$i]);
 		$res=mysqli_query($conn,$query);
 		$rows=mysqli_fetch_all($res,MYSQLI_ASSOC);
-		$tables[$i]=$rows;
+		$tables_results[$tables_split[$i]]=$rows;
 		mysqli_free_result($res);
 	}
-
+    return $tables_results;
 }
-
 ?>

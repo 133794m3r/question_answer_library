@@ -99,20 +99,23 @@ function select_all(identifier){
 function ajax(location,method_type,data){
     var ajax=new XMLHttpRequest();
     var crsf_token='';
-    ajax.open('GET','/dev_broker?crsf=new',false);
-    ajax.setRequestHeader('X-Requested-With : XMLHttpRequest');
+    /*
+    ajax.open('GET','dev_broker?crsf=new',false);
+    ajax.setRequestHeader('X-Requested-With','XMLHttpRequest');
     ajax.send();
     crsf_token=ajax.response;
     if(method_type ===('GET' || 'PUT' || 'POST')){
         return 1;
     }
+    */
     ajax = new XMLHttpRequest();
     ajax.open(method_type,location,false);
-    ajax.setRequestHeader('X-Requested-With : XMLHttpRequest');
-    ajax.setRequestHeader('X-Crsf : '+crsf_token);
+    ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    ajax.setRequestHeader('X-Requested-With','XMLHttpRequest');
+    ajax.setRequestHeader('X-Crsf','crsf_token');
     ajax.send(data);
     var response=JSON.parse(ajax.response);
-
     return response;
 
 }
@@ -163,8 +166,8 @@ function work_func_fast(password,salt,iterations,output_len){
     while(output_len >= 32){
         for(i=inner_len-1; i >=i_4; i--){
             inner[i]++;
-            if(inner[i]
-            }
+
+    }
     }
     
 }

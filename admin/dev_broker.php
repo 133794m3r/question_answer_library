@@ -1,35 +1,16 @@
 <?PHP
-if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
-    if (ob_get_contents()) ob_clean(); // ob_get_contents() even works without active output buffering
-    header('Location: /');
-	session_write_close();
-    fastcgi_finish_request();
-}
+
 include '../main/functions.php';
 include '../main/config.php';
-
-function crsf_tokens($username){
-	 return unique_token($username);
-}
-
-if(isset($_GET)){
-	if($_GET['crsf'] == 'new'){
-		if(isset($_SESSION['username'])){
-			$username=$_SESSION['username'];
-		}
-		else{
-			$username='initial_crsf_user';
-		}
-		$_SESSION['crsf']=crsf_tokens($username);
-		echo $_SESSION['crsf'];
-	}
-	else if($_GET['data']=true){
-		echo get_all_data($db_name,$_GET['tables_list']);
+$db_name='learning_system_practice_tests';
+if (isset($_POST)){
+	if($_POST['data']=true){
+		echo json_encode(get_all_data($db_name,$_POST['tables']));
 	}
 	else{
-		echo json_encode('');
+		echo json_encode('false');
 	}
 }
-else if (isset($_POST)){
-
+else{
+echo json_encode('no post');
 }
