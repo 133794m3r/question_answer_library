@@ -171,3 +171,33 @@ function work_func_fast(password,salt,iterations,output_len){
     }
     
 }
+function init_toggle_hidden(){
+    var selectors=document.querySelectorAll('show');
+    var selectors_len=selectors.length;
+    var i=0;
+    console.log('b');
+    for(i=0;i<selectors_len;++i){
+        selector[i].onclick=toggle_hidden;
+    }
+}
+function toggle_hidden(){
+    var elem=this.parentNode.children;
+    console.log('a');
+     elem=Array.from(elem);
+     var class_name=elem[1].className;
+     if(elem!==2){
+        return 1;
+     }
+
+     if(class_name==='hidden'){
+      elem[1].className='show';
+     }
+
+     else{
+       elem[1].className='hidden';
+     }
+    return 0;
+}
+function $(selector){
+    return document.querySelectorAll(selector);
+}

@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div id="devtoc">
-			<select id='filter_subjects' onChange='filter_subjects();'>
+			<select id='filter_subjects' class='subjects' onChange='filter_subjects();'>
 				<option value='M'>Select Subject Matter</option>
 				<option value='0'>Anatomy & Physiology</option>
 				<option value='1'>Biology</option>
@@ -16,7 +16,7 @@
 				<option value='4'>Chemistry</option>
 				<option value='5'>Algebra</option>
 			</select>
-			<select id='filter_chapters' onChange='filter_chapters();'>
+			<select id='filter_chapters' class='chapters' onChange='filter_chapters();'>
 				<option value='C'>Select Chapter</option>
 			</select>
 			<p> List of Questions</p>
@@ -105,25 +105,25 @@
             for said questions.
 		</p>
 		<form name='question_to_encode' id='question_to_encode'>
-			<select id='question_subjects'>
+			<select id='question_subjects' class='subjects'>
 				<option value='-1'>Select Subject Matter</option>
-				<option value='0'>Anatomy & Physiology</option>
+<!--				<option value='0'>Anatomy & Physiology</option>
 				<option value='1'>Biology</option>
 				<option value='2'>Microbiology</option>
 				<option value='3'>Organic Chemistry</option>
 				<option value='4'>Chemistry</option>
-				<option value='5'>Algebra</option>
+				<option value='5'>Algebra</option>-->
 			</select>
 			<input id='new_subject' class='hidden' name='new_subject' />
-			<select id='question_chapters'>
+			<select id='question_chapters' class='chapters'>
 				<option value='C'>Select Chapter</option>
 			</select>
 			<input id='new_chapter' class='hidden' name='new_chapter' /><br />
             Question:<textarea id='question_txt' name='question_txt' cols='40' rows='1'></textarea>
             <input id='question_id' name='question_id' class='hidden'/> <br />
             <h3>Answers:</h3>
-<!--            <div id='answers_and_rationales'>
--->            <span class='numerical_labels'>1:</span>
+           <div id='answers_and_rationales'>
+           <span class='numerical_labels'>1:</span>
             <textarea id="answer_0" cols="30" rows="3" name='answer_0_txt'></textarea>&emsp;&emsp;
             <span class='numerical_labels'>2:</span>
             <textarea id="answer_1" cols="30" rows="3" name='answer_1_txt'></textarea>&emsp;&emsp;
@@ -138,8 +138,8 @@
             <span id='add_rational' class='add'>Add Rational</span>
             <input id='answer_0_id' name='answer_0_id' class='hidden'/>
             <input id='answer_1_id' name='answer_1_id' class='hidden'/>
-<!--            </div>
--->			<br /><br /><button type='button' onclick='process_form_data();'>Submit Question </button>
+           </div>
+			<br /><br /><button type='button' onclick='process_form_data();'>Submit Question </button>
 		</form>
 		</div>
 		<script>
@@ -150,9 +150,12 @@
 			document.getElementById('filter_chapters').setAttribute('onChange','filter_chapters()');
 			document.getElementById('question_subjects').setAttribute('onChange','question_subject()');
 			document.getElementById('question_chapters').setAttribute('onChange','question_chapter()');
+			window.onload=function(){
+				init_toggle_hidden();
+				get_all_data();
+			}
 		</script>
 		<script type="application/x-javascript" async defer src='question_dev.js'></script>
-        <script type="application/x-javascript" src='../scripts/msgpack.js'></script>
 		<script type="application/x-javascript" async src='../scripts/quicksilver_new.js'></script>
 		<script type="application/x-javascript" async src='../scripts/misc.js'></script>
 		<!--

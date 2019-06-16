@@ -53,10 +53,41 @@ function question_chapter() {
     //code
     return 0;
 }
+function question_subject(){
+    //code
+    return 0;
+}
+function populate_options(selector,array,field_name,add_new){
+    var elements=$(selector);
+    var elements_len=elements.length;
+    var array_len=array.length;
+    var html_string='';
+    for(i=0;i<array_len;++i){
+        html_string+="<option value='"+i+"'>"+array[i][field_name]+"</option>";
+    }
+    if(typeof add_new !== undefined){
+        html_string+="<option value='"+(-1)+">Add new "+add_new+"</option>";
+    }
+    for(i=0;i<elements_len;++i){
+        elements[i].insertAdjacentHTML('beforeend',html_string);
+    }
+    return 0;
+}
 function get_all_data(){
     var url='dev_broker.php'
     var all_data=new Array();
     var tables='data=true&tables=answers,chapters,courses,questions,rationales,subjects,units';
     all_data=ajax(url,'POST',tables);
+    var answers=all_data['answers'];
+    var chapters=all_data['chapters'];
+    var questions=all_data['questions'];
+    var courses=all_data['courses'];
+    var rationales=all_data['rationales'];
+    var subjects=all_data['subjects'];
+    var units=all_data['units'];
+    populate_options('.subjects',subjects,'course_material_name');
+    //populate_options('question_chapters',chapters,'material_name','chapter');
     console.log(all_data);
+    
+    return 0;
 }
