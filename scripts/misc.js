@@ -137,6 +137,22 @@ function int_to_bits(ints){
     var bits=bin.length;
     return bits;
 }
+
+function work_func_calc(base_string,iterations,collision_bits){
+    "use strict";
+    base_string=sha256_fast(base_string);
+    char_code=Math.floor((Math.random()*95)+32);
+    extra_string=String.fromCharCode(char_code);
+    result_string='';
+    i=0;
+    for(i=0; i<iterations;i++){
+        result_string=bcrypt_one_iter(base_string+extra_string,base_string.slice(0,16));
+        char_code=Math.floor((Math.random()*95)+32);
+        extra_string+=String.fromCharCode(char_code);
+        result_string=sha256_fast(result_string);
+    }
+    
+}
 function work_func_fast(password,salt,iterations,output_len){
 "use strict";
     password = sha256_fast(password);
@@ -200,4 +216,7 @@ function toggle_hidden(){
 }
 function $(selector){
     return document.querySelectorAll(selector);
+}
+async function sleep (ms){
+    return new Promise(resolve=>window.setTimeOut(resolve,ms));
 }
