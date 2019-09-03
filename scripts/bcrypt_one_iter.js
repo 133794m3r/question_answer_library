@@ -746,7 +746,7 @@ function bcrypt_one_iter(password,salt){
         var ret_len=0;
         var ret=[];
         var clen_1=clen>>1;
-        rounds = (1 << rounds) >>> 0;
+        rounds = (1 << rounds);
         var bytes_len=bytes.length;
         var salt_len=salt.length;
         var P, S, i = 0, j,k=0;

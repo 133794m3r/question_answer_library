@@ -1,3 +1,11 @@
 =========
 things to do
 ========
+Captcha system will utilize basic mathematical operations/basic questions.
+Also there will be a proof of work function for the loginscreen to help slow down bots.
+
+The captcha question will be things like <NUM> <plus/minus/divide/multiply> <NUM2> = <X>. Or one of the first NUMS will be replaced with X and they'l have to do some basic algebra. It's not going to be anything that hard they can just put into wolfram alpha and those ones will only be for probable bots. NUMS will be from 1-50. Divide will have no remainder. Since everyone has a calculator in their pocket or one on the computer they're utilizing there's no issues with this basic math question being asked.
+
+Second question will be something simple like. What color is the sky(usually), what color is the grass(usually), etc. Simple things that if they don't know they can google. It'll all be common knowledge questions or something they can google and get the correct answer. 
+
+Number of bits will be set based on how probable it is that they're a bot. Furhter after 2nd attempt the number of bCrypt rounds will be doubled. So it'll go from a value of 3 to a value of 4. After the 3rd failure the bits required will be increased by 1. This will help to slow bots but won't affect most normal users. After 5 tries the account is put on a lock for 10min(initially and each time the lock occurs it's doubled) and the browser session will be set to 10min and the IP Address that they used will be flagged to have the increased proof-of-work values to be hit after the 2nd failed attempt instead of the 3rd.
